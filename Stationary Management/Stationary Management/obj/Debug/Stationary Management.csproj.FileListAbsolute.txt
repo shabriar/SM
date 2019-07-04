@@ -1,0 +1,97 @@
+E:\Repository\Stationary Management\Stationary Management\bin\ApplicationInsights.config
+E:\Repository\Stationary Management\Stationary Management\bin\Stationary Management.dll.config
+E:\Repository\Stationary Management\Stationary Management\bin\Stationary Management.dll
+E:\Repository\Stationary Management\Stationary Management\bin\Stationary Management.pdb
+E:\Repository\Stationary Management\Stationary Management\bin\roslyn\csc.exe
+E:\Repository\Stationary Management\Stationary Management\bin\roslyn\csc.exe.config
+E:\Repository\Stationary Management\Stationary Management\bin\roslyn\csc.rsp
+E:\Repository\Stationary Management\Stationary Management\bin\roslyn\csi.exe
+E:\Repository\Stationary Management\Stationary Management\bin\roslyn\csi.exe.config
+E:\Repository\Stationary Management\Stationary Management\bin\roslyn\csi.rsp
+E:\Repository\Stationary Management\Stationary Management\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Repository\Stationary Management\Stationary Management\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Repository\Stationary Management\Stationary Management\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\Repository\Stationary Management\Stationary Management\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Repository\Stationary Management\Stationary Management\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\Repository\Stationary Management\Stationary Management\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Repository\Stationary Management\Stationary Management\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Repository\Stationary Management\Stationary Management\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\Repository\Stationary Management\Stationary Management\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\Repository\Stationary Management\Stationary Management\bin\roslyn\Microsoft.Managed.Core.targets
+E:\Repository\Stationary Management\Stationary Management\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Repository\Stationary Management\Stationary Management\bin\roslyn\System.AppContext.dll
+E:\Repository\Stationary Management\Stationary Management\bin\roslyn\System.Collections.Immutable.dll
+E:\Repository\Stationary Management\Stationary Management\bin\roslyn\System.Console.dll
+E:\Repository\Stationary Management\Stationary Management\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+E:\Repository\Stationary Management\Stationary Management\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\Repository\Stationary Management\Stationary Management\bin\roslyn\System.IO.Compression.dll
+E:\Repository\Stationary Management\Stationary Management\bin\roslyn\System.IO.FileSystem.dll
+E:\Repository\Stationary Management\Stationary Management\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\Repository\Stationary Management\Stationary Management\bin\roslyn\System.IO.Pipes.AccessControl.dll
+E:\Repository\Stationary Management\Stationary Management\bin\roslyn\System.IO.Pipes.dll
+E:\Repository\Stationary Management\Stationary Management\bin\roslyn\System.Reflection.Metadata.dll
+E:\Repository\Stationary Management\Stationary Management\bin\roslyn\System.Security.AccessControl.dll
+E:\Repository\Stationary Management\Stationary Management\bin\roslyn\System.Security.Claims.dll
+E:\Repository\Stationary Management\Stationary Management\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+E:\Repository\Stationary Management\Stationary Management\bin\roslyn\System.Security.Cryptography.Encoding.dll
+E:\Repository\Stationary Management\Stationary Management\bin\roslyn\System.Security.Cryptography.Primitives.dll
+E:\Repository\Stationary Management\Stationary Management\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+E:\Repository\Stationary Management\Stationary Management\bin\roslyn\System.Security.Principal.Windows.dll
+E:\Repository\Stationary Management\Stationary Management\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\Repository\Stationary Management\Stationary Management\bin\roslyn\System.ValueTuple.dll
+E:\Repository\Stationary Management\Stationary Management\bin\roslyn\System.Xml.ReaderWriter.dll
+E:\Repository\Stationary Management\Stationary Management\bin\roslyn\System.Xml.XmlDocument.dll
+E:\Repository\Stationary Management\Stationary Management\bin\roslyn\System.Xml.XPath.dll
+E:\Repository\Stationary Management\Stationary Management\bin\roslyn\System.Xml.XPath.XDocument.dll
+E:\Repository\Stationary Management\Stationary Management\bin\roslyn\vbc.exe
+E:\Repository\Stationary Management\Stationary Management\bin\roslyn\vbc.exe.config
+E:\Repository\Stationary Management\Stationary Management\bin\roslyn\vbc.rsp
+E:\Repository\Stationary Management\Stationary Management\bin\roslyn\VBCSCompiler.exe
+E:\Repository\Stationary Management\Stationary Management\bin\roslyn\VBCSCompiler.exe.config
+E:\Repository\Stationary Management\Stationary Management\bin\Antlr3.Runtime.dll
+E:\Repository\Stationary Management\Stationary Management\bin\Microsoft.AI.Agent.Intercept.dll
+E:\Repository\Stationary Management\Stationary Management\bin\Microsoft.AI.DependencyCollector.dll
+E:\Repository\Stationary Management\Stationary Management\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\Repository\Stationary Management\Stationary Management\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\Repository\Stationary Management\Stationary Management\bin\Microsoft.AI.Web.dll
+E:\Repository\Stationary Management\Stationary Management\bin\Microsoft.AI.WindowsServer.dll
+E:\Repository\Stationary Management\Stationary Management\bin\Microsoft.ApplicationInsights.dll
+E:\Repository\Stationary Management\Stationary Management\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+E:\Repository\Stationary Management\Stationary Management\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Repository\Stationary Management\Stationary Management\bin\Microsoft.Web.Infrastructure.dll
+E:\Repository\Stationary Management\Stationary Management\bin\Newtonsoft.Json.dll
+E:\Repository\Stationary Management\Stationary Management\bin\System.Diagnostics.DiagnosticSource.dll
+E:\Repository\Stationary Management\Stationary Management\bin\System.Web.Helpers.dll
+E:\Repository\Stationary Management\Stationary Management\bin\System.Web.Mvc.dll
+E:\Repository\Stationary Management\Stationary Management\bin\System.Web.Optimization.dll
+E:\Repository\Stationary Management\Stationary Management\bin\System.Web.Razor.dll
+E:\Repository\Stationary Management\Stationary Management\bin\System.Web.WebPages.Deployment.dll
+E:\Repository\Stationary Management\Stationary Management\bin\System.Web.WebPages.dll
+E:\Repository\Stationary Management\Stationary Management\bin\System.Web.WebPages.Razor.dll
+E:\Repository\Stationary Management\Stationary Management\bin\WebGrease.dll
+E:\Repository\Stationary Management\Stationary Management\bin\System.Web.Helpers.xml
+E:\Repository\Stationary Management\Stationary Management\bin\System.Web.Mvc.xml
+E:\Repository\Stationary Management\Stationary Management\bin\System.Web.Optimization.xml
+E:\Repository\Stationary Management\Stationary Management\bin\System.Web.Razor.xml
+E:\Repository\Stationary Management\Stationary Management\bin\System.Web.WebPages.xml
+E:\Repository\Stationary Management\Stationary Management\bin\System.Web.WebPages.Deployment.xml
+E:\Repository\Stationary Management\Stationary Management\bin\System.Web.WebPages.Razor.xml
+E:\Repository\Stationary Management\Stationary Management\bin\Newtonsoft.Json.xml
+E:\Repository\Stationary Management\Stationary Management\bin\Antlr3.Runtime.pdb
+E:\Repository\Stationary Management\Stationary Management\bin\System.Diagnostics.DiagnosticSource.xml
+E:\Repository\Stationary Management\Stationary Management\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+E:\Repository\Stationary Management\Stationary Management\bin\Microsoft.AI.DependencyCollector.xml
+E:\Repository\Stationary Management\Stationary Management\bin\Microsoft.AI.WindowsServer.xml
+E:\Repository\Stationary Management\Stationary Management\bin\Microsoft.AI.Web.xml
+E:\Repository\Stationary Management\Stationary Management\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Repository\Stationary Management\Stationary Management\obj\Debug\Stationary Management.csprojAssemblyReference.cache
+E:\Repository\Stationary Management\Stationary Management\obj\Debug\Stationary Management.csproj.CoreCompileInputs.cache
+E:\Repository\Stationary Management\Stationary Management\obj\Debug\Stationary Management.csproj.CopyComplete
+E:\Repository\Stationary Management\Stationary Management\obj\Debug\Stationary Management.dll
+E:\Repository\Stationary Management\Stationary Management\obj\Debug\Stationary Management.pdb
+E:\Repository\Stationary Management\Stationary Management\bin\EntityFramework.dll
+E:\Repository\Stationary Management\Stationary Management\bin\EntityFramework.SqlServer.dll
+E:\Repository\Stationary Management\Stationary Management\bin\EntityFramework.xml
+E:\Repository\Stationary Management\Stationary Management\bin\EntityFramework.SqlServer.xml
+E:\Repository\Stationary Management\Stationary Management\obj\Debug\Stationary_Management.Migrations.initial.resources
+E:\Repository\Stationary Management\Stationary Management\obj\Debug\Stationary Management.csproj.GenerateResource.cache

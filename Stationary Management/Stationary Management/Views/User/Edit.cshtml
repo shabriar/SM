@@ -1,0 +1,200 @@
+﻿@model SCHM.Web.Models.UserRegisterModel
+@{
+                /**/
+
+                ViewBag.Title = "User Edit";
+}
+<section class="content-header">
+    <h1>
+        <br/>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">Users</a></li>
+        <li class="active">Edit</li>
+    </ol>
+</section>
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">User Edit</h3>
+                    <div class="box-tools pull-right">
+                       
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                    </div>
+                </div>
+                @using (Html.BeginForm("Edit", "User", FormMethod.Post, new { @enctype = "multipart/form-data", @class = "form-horizontal", @id = "registrationForm" }))
+                {
+                    <div class="box-body">
+
+                        <div class="row">
+                            @Html.HiddenFor(model => model.Id)
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(true)
+                            @Html.HiddenFor(model => model.InitialUserName, new { @Value = Model.UserName })
+                            @Html.HiddenFor(model => model.InitialEmail, new { @Value = Model.Email })
+
+                            <div class="col-sm-12">
+                                <div class="row">
+                                    <div class="col-md-6">
+
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.Name, new { @class = "control-label col-md-3 text-left" })
+                                            <div class="col-md-6">
+                                                @Html.TextBoxFor(model => model.Name, new { @class = "form-control input-sm" })
+                                                @Html.ValidationMessageFor(model => model.Name, null, new { @class = "control-label" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.Email, new { @class =  "control-label col-md-3 text-left"  })
+                                            <div class="col-md-6">
+                                                @Html.TextBoxFor(model => model.Email, new { @class = "form-control input-sm" })
+                                                @Html.ValidationMessageFor(model => model.Email, null, new { @class = "control-label" })
+                                            </div>
+                                        </div>
+                                        @*<div class="form-group row">
+                                            @Html.Label("User Type", new { @class =  "control-label col-md-3 text-left" })
+                                            <div class="col-md-2">
+                                                <label class="check">
+                                                    @Html.RadioButtonFor(model => model.UserType, "Admin", new { @checked = true, @onclick = "isOperatorFunction()" })Admin
+                                                </label>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <label class="check">
+                                                    @Html.RadioButtonFor(model => model.UserType, "Manager", new { @onclick = "isOperatorFunction()" })Manager
+                                                </label>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label class="check">
+                                                    @Html.RadioButtonFor(model => model.UserType, "Operator", new { @onclick = "isOperatorFunction()" })Operator
+                                                </label>
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.UserType, null, new { @class = "col-md-12" })
+                                        </div>*@
+
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.RoleId, new { @class =  "control-label col-md-3 text-left"  })
+                                            <div class="col-md-6">
+                                                @Html.DropDownListFor(model => model.RoleId, new SelectList(Model.Roles, "Id", "RoleName"), "---Select---", new { @class = "form-control input-sm" })
+                                                @Html.ValidationMessageFor(model => model.RoleId, null, new { @class = "control-label" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.CardNo, new { @class = "control-label col-md-3 text-left"  })
+                                            <div class="col-md-6">
+                                                @Html.TextBoxFor(model => model.CardNo, new { @class = "form-control input-sm" })
+                                                @Html.ValidationMessageFor(model => model.CardNo, null, new { @class = "control-label" })
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.UserName, new { @class =  "control-label col-md-3 text-left" })
+                                            <div class="col-md-6">
+                                                @Html.TextBoxFor(model => model.UserName, new { @class = "form-control input-sm" })
+                                                @Html.ValidationMessageFor(model => model.UserName, null, new { @class = "control-label" })
+                                            </div>
+                                        </div>
+                                        @*<div class="form-group row">
+                                            @Html.Label("Employee Type", new { @class = "control-label col-md-5" })
+                                            <div class="col-md-7">
+                                                @{
+                                                    var employeeTypeList = new List<SelectListItem>();
+                                                    employeeTypeList.Add(new SelectListItem() { Text = "Permanent", Value = "Permanent" });
+                                                    employeeTypeList.Add(new SelectListItem() { Text = "Temporary", Value = "Temporary" });
+                                                    employeeTypeList.Add(new SelectListItem() { Text = "Contractors", Value = "Contractors" });
+                                                    employeeTypeList.Add(new SelectListItem() { Text = "Third Parties", Value = "Third_Parties" });
+                                                }
+                                                @Html.DropDownListFor(model => model.EmployeeType, new SelectList(employeeTypeList, "Value", "Text"), "---Select---", new { @class = "form-control input-sm", @onchange = "ExpireDateHidder()" })
+                                                @Html.ValidationMessageFor(model => model.EmployeeType, null, new { @class = "control-label" })
+                                            </div>
+                                        </div>*@
+
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.MobileNumber, new { @class =  "control-label col-md-3 text-left" })
+                                            <div class="col-md-6">
+                                                @Html.TextBoxFor(model => model.MobileNumber, new { @class = "form-control input-sm" })
+                                                @Html.ValidationMessageFor(model => model.MobileNumber, null, new { @class = "control-label" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.Gender, new { @class =  "control-label col-md-3 text-left"  })
+                                            <div class="col-md-6">
+                                                @{
+                                                    var genderList = new List<SelectListItem>();
+                                                    genderList.Add(new SelectListItem() { Text = "Male", Value = "Male" });
+                                                    genderList.Add(new SelectListItem() { Text = "Female", Value = "Female" });
+
+                                                }
+                                                @Html.DropDownListFor(model => model.Gender, new SelectList(genderList, "Value", "Text"), "---Select---", new { @class = "form-control input-sm" })
+                                                @Html.ValidationMessageFor(model => model.Gender, null, new { @class = "control-label" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.DepartmentId, new { @class = "control-label col-md-3 text-left"  })
+                                            <div class="col-md-6">
+                                                @Html.DropDownListFor(model => model.DepartmentId, new SelectList(Model.Departments, "Id", "DepartmentName"), "---Select---", new { @class = "form-control input-sm" })
+                                                @Html.ValidationMessageFor(model => model.Department, null, new { @class = "control-label" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.DesignationId, new { @class =  "control-label col-md-3 text-left"  })
+                                            <div class="col-md-6">
+                                                @Html.DropDownListFor(model => model.DesignationId, new SelectList(Model.Designations, "Id", "DesignationName"), "---Select---", new { @class = "form-control input-sm" })
+                                                @Html.ValidationMessageFor(model => model.DesignationId, null, new { @class = "control-label" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.Address, new { @class = "control-label col-md-3 text-left"  })
+                                            <div class="col-md-6">
+                                                @Html.TextAreaFor(model => model.Address, new { @class = "form-control input-sm" })
+                                                @Html.ValidationMessageFor(model => model.Address, null, new { @class = "control-label" })
+                                            </div>
+                                        </div>
+
+                                        @*<div class="form-group row " id="expireDateDiv">
+                                            @Html.Label("Expire Date", new { @class = "control-label col-md-5" })
+                                            <div class="col-md-7">
+                                                <div class="input-group">
+                                                    <input type="text" name="ExpireDate" id="ExpireDate" class="form-control input-sm myDatepicker"  />*@
+                                                    @*@Html.TextBoxFor(model => model.ExpireDate, new { @class = "form-control input-sm myDatepicker", @required = "required" })*@
+                                                    @*<span class="input-group-addon myDatepickerIcon">
+                                                        <i class="fa fa-calendar bigger-110 "></i>
+                                                    </span>
+
+                                                </div>
+                                                @Html.ValidationMessageFor(model => model.ExpireDate, null, new { @class = "control-label" })
+                                            </div>
+                                        </div>*@
+
+                                    </div>
+                                </div>
+
+
+                            </div><!-- /.col -->
+
+                        </div>
+                    </div>
+                    <div class="box-footer">
+                        <a href="@Url.Action("Index", "User")" class="btn btn-danger btn-xs"><i class="fa fa-times-circle"></i> Cancel</a>
+                        <button class="btn btn-success pull-right btn-xs"><i class="fa fa-save"></i> Save</button>
+                    </div>
+
+                }
+            </div>
+
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+
+
+    </script>
+}
+
