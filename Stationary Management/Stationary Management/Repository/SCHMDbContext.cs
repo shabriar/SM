@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SCHM.Entities;
+using Stationary_Management.Entity;
 
 namespace SCHM.Repo
 {
@@ -20,6 +21,8 @@ namespace SCHM.Repo
         }
         
         public DbSet<User> Users { get; set; }
+        public DbSet<Products> Products  { get; set; }
+        public DbSet<Store> stores   { get; set; }
         public DbSet<UserRole> UserRoles { get; set; }
         public DbSet<UserRolePermission> UserRolePermissions { get; set; }
         
