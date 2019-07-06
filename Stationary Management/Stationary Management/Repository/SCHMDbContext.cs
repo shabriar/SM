@@ -23,6 +23,7 @@ namespace SCHM.Repo
         public DbSet<User> Users { get; set; }
         public DbSet<Products> Products  { get; set; }
         public DbSet<Store> stores   { get; set; }
+        public DbSet<Requisition> Requisitions  { get; set; }
         public DbSet<UserRole> UserRoles { get; set; }
         public DbSet<UserRolePermission> UserRolePermissions { get; set; }
         

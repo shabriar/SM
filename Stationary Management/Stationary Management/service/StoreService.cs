@@ -45,7 +45,7 @@ namespace SCHM.Services
                 CreatedBy = stores.CreatedBy
             };
             var ProductStockIn = _ProductUnitOfWork.ProductRepository.GetById(stores.ProductsId);
-            ProductStockIn.StockAmount = stores.Quantity;
+            ProductStockIn.StockAmount += stores.Quantity;
             _ProductUnitOfWork.ProductRepository.Update(ProductStockIn);
             _ProductUnitOfWork.Save();
 
@@ -63,6 +63,7 @@ namespace SCHM.Services
 
             Storesntry.UpdatedAt = stores.UpdatedAt;
             Storesntry.UpdatedBy = stores.UpdatedBy;
+
             _storeUnitOfWork.StoreRepository.Update(Storesntry);
             _storeUnitOfWork.Save();
         }

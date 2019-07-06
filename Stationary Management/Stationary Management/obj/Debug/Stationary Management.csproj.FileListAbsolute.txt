@@ -193,3 +193,4 @@ E:\Stationary Management\Stationary Management\obj\Debug\Stationary Management.c
 E:\Stationary Management\Stationary Management\obj\Debug\Stationary Management.dll
 E:\Stationary Management\Stationary Management\obj\Debug\Stationary Management.pdb
 E:\Stationary Management\Stationary Management\obj\Debug\Stationary_Management.Migrations.StoreProduct.resources
+E:\Stationary Management\Stationary Management\obj\Debug\Stationary_Management.Migrations.req.resources
