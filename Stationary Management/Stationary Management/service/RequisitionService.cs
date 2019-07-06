@@ -43,7 +43,7 @@ namespace SCHM.Services
                 ProductsId = requisition.ProductsId,
                 RequisitionQuantity = requisition.RequisitionQuantity,
                 RequisitionNo = requisition.RequisitionNo,
-                Status = requisition.Status,
+                ReqStatus = requisition.ReqStatus,
                 
                
                 CreatedBy = requisition.CreatedBy
@@ -64,7 +64,7 @@ namespace SCHM.Services
             RequisitionsEntry.ProductsId = requisition.ProductsId;
             RequisitionsEntry.RequisitionQuantity = requisition.RequisitionQuantity;
             RequisitionsEntry.RequisitionNo = requisition.RequisitionNo;
-            RequisitionsEntry.Status = requisition.Status;
+            RequisitionsEntry.ReqStatus = requisition.ReqStatus;
 
 
             RequisitionsEntry.UpdatedAt = requisition.UpdatedAt;
