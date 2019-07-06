@@ -53,7 +53,7 @@ namespace SCHM.Web.Models
         }
         public void Add()
         {
-            base.Status = true;
+            base.Status = 1;
             base.CreatedBy = AuthenticatedUser.GetUserFromIdentity().UserId;
             _requisitionService.AddStore(this);
         }

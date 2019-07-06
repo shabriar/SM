@@ -183,6 +183,10 @@
     <Compile Include="Migrations\201907060602021_req.Designer.cs">
       <DependentUpon>201907060602021_req.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907060727026_ReqStatusUpdate.cs" />
+    <Compile Include="Migrations\201907060727026_ReqStatusUpdate.Designer.cs">
+      <DependentUpon>201907060727026_ReqStatusUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AuthenticatedUser.cs" />
     <Compile Include="Models\RequisitionModel.cs" />
@@ -299,6 +303,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907060602021_req.resx">
       <DependentUpon>201907060602021_req.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907060727026_ReqStatusUpdate.resx">
+      <DependentUpon>201907060727026_ReqStatusUpdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
