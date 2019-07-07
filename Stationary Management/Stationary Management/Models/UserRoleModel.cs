@@ -87,10 +87,12 @@ namespace SCHM.Web.Models
         public List<RoleTaskCheckBoxModel> TaskList = new List<RoleTaskCheckBoxModel>
         {
   
-            new RoleTaskCheckBoxModel {PermissionName="Configuration", PermissionCategory = "Configuration"},
-             new RoleTaskCheckBoxModel {PermissionName="Proforma_Invoice", PermissionCategory = "Forms"},
-             new RoleTaskCheckBoxModel {PermissionName="Loan_Entry", PermissionCategory = "Forms"},
-             new RoleTaskCheckBoxModel {PermissionName="Loan_Return", PermissionCategory = "Forms"},
+            new RoleTaskCheckBoxModel {PermissionName="User", PermissionCategory = "User"},
+            new RoleTaskCheckBoxModel {PermissionName="User_Roles", PermissionCategory = "User_Roles"},
+            new RoleTaskCheckBoxModel {PermissionName="Product", PermissionCategory = "Product"},
+             new RoleTaskCheckBoxModel {PermissionName="Store", PermissionCategory = "Store"},
+             new RoleTaskCheckBoxModel {PermissionName="Requisition", PermissionCategory = "Requisition"},
+             new RoleTaskCheckBoxModel {PermissionName="Requisition_Approval", PermissionCategory = "Requisition_Approval"},
         };
 
 

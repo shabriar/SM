@@ -9,7 +9,7 @@ namespace Stationary_Management.Controllers
 {
    
     [Authorize]
-    [Roles("Global_SupAdmin,Configuration")]
+
     public class RequisitionController : Controller
     {
         // GET: Product
@@ -25,17 +25,19 @@ namespace Stationary_Management.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Add(RequisitionModel model)
         {
-            if (ModelState.IsValid)
-            {
+           
                 model.Add();
                 return RedirectToAction("Index");
-            }
-            return View(model);
         }
 
         public ActionResult Details(int id)
         {
             return View(new RequisitionModel(id));
+        }
+        public ActionResult Approve(int id)
+        {          
+            new RequisitionModel().Approve(id);
+            return RedirectToAction("Index");
         }
 
         public ActionResult Edit(int id)

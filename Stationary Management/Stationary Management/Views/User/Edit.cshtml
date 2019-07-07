@@ -133,20 +133,7 @@
                                                 @Html.ValidationMessageFor(model => model.Gender, null, new { @class = "control-label" })
                                             </div>
                                         </div>
-                                        <div class="form-group row">
-                                            @Html.LabelFor(model => model.DepartmentId, new { @class = "control-label col-md-3 text-left"  })
-                                            <div class="col-md-6">
-                                                @Html.DropDownListFor(model => model.DepartmentId, new SelectList(Model.Departments, "Id", "DepartmentName"), "---Select---", new { @class = "form-control input-sm" })
-                                                @Html.ValidationMessageFor(model => model.Department, null, new { @class = "control-label" })
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            @Html.LabelFor(model => model.DesignationId, new { @class =  "control-label col-md-3 text-left"  })
-                                            <div class="col-md-6">
-                                                @Html.DropDownListFor(model => model.DesignationId, new SelectList(Model.Designations, "Id", "DesignationName"), "---Select---", new { @class = "form-control input-sm" })
-                                                @Html.ValidationMessageFor(model => model.DesignationId, null, new { @class = "control-label" })
-                                            </div>
-                                        </div>
+                                       
                                         <div class="form-group row">
                                             @Html.LabelFor(model => model.Address, new { @class = "control-label col-md-3 text-left"  })
                                             <div class="col-md-6">

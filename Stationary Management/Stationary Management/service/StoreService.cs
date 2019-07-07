@@ -58,8 +58,14 @@ namespace SCHM.Services
             var Storesntry = GetStoreById(stores.Id);
             Storesntry.Products = stores.Products;
             Storesntry.ProductsId = stores.ProductsId;
+            var ProductStockIn = _ProductUnitOfWork.ProductRepository.GetById(stores.ProductsId);
+            ProductStockIn.StockAmount -= Storesntry.Quantity;
+            ProductStockIn.StockAmount += stores.Quantity;
+            _ProductUnitOfWork.ProductRepository.Update(ProductStockIn);
+            _ProductUnitOfWork.Save();
             Storesntry.Quantity = stores.Quantity;
 
+            
 
             Storesntry.UpdatedAt = stores.UpdatedAt;
             Storesntry.UpdatedBy = stores.UpdatedBy;

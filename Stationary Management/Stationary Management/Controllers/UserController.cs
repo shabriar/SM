@@ -21,7 +21,7 @@ namespace SCHM.Web.Controllers
     {
         // GET: Admin/User
 
-       [Roles("Global_SupAdmin,Configuration")]
+     
         public ActionResult Index()
         {
             return View(new UserModel().GetAllUser().ToList());
@@ -144,9 +144,7 @@ namespace SCHM.Web.Controllers
         }
         #endregion
         #region user register area
-        [Roles("Global_SupAdmin,User_Creation")]
-
-        [Roles("Global_SupAdmin,Configuration")]
+        
         public ActionResult Register()
         {
 
@@ -186,7 +184,7 @@ namespace SCHM.Web.Controllers
 
         #region user edit area
 
-        [Roles("Global_SupAdmin,Configuration")]
+     
         public ActionResult Edit(int id)
         {
 
@@ -348,7 +346,7 @@ namespace SCHM.Web.Controllers
             return RedirectToAction("Roles");
         }
 
-        [Roles("Global_SupAdmin,Configuration")]
+       
         public ActionResult EditRole(int id)
         {
 
