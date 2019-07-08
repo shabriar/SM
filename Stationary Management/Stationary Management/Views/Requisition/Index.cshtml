@@ -97,6 +97,8 @@
                                                 @if (User.IsInRole("Requisition_Approval") && !item.ReqStatus)
                                                 {
                                                     <a onclick="confirm('Do you want to approve?')" class="btn btn-default btn-xs" href="@Url.Action("Approve","Requisition",new {id=item.Id })" title="Edit"><i class="fa fa-pencil"></i>Approve</a>
+                                                    <a class="btn btn-default btn-xs" href="@Url.Action("Details","Requisition",new {id=item.Id })" title="Details"><i class="fa fa-pencil"></i>Details</a>
+
                                                 }
                                             </td>
 
