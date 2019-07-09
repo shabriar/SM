@@ -20,7 +20,7 @@ namespace Stationary_Management.Entity
         [Display(Name = "Requisition No")]
         public double RequisitionNo { get; set; }
 
-        [Display(Name = "Status")]
+        [Display(Name = "Requisition Status")]
         public  bool ReqStatus { get; set; }
     }
 }

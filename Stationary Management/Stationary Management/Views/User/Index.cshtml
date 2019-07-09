@@ -22,7 +22,8 @@
                 <div class="box-header with-border">
                     <h3 class="box-title">User List</h3>
                     <div class="box-tools pull-right">
-                        <a href="@Url.Action("Register","User")" class="btn btn-box-tool" title="Add"> <i class="fa fa-plus"></i></a>
+
+                        <a href="@Url.Action("Register","User")" class="btn btn-box-tool" title="Add"> <i class="fa fa-plus"></i> Add</a>
                         
                         <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
                     </div>
@@ -40,9 +41,6 @@
                                         @Html.DisplayNameFor(model => model.Name)
                                     </th>
 
-                                    @*<th>
-                    @Html.DisplayNameFor(model => model.EmployeeType)
-                </th>*@
                                     <th>
                                         @Html.DisplayNameFor(model => model.Email)
                                     </th>
@@ -126,14 +124,14 @@
                                                     @if (!item.IsDeleted)
                                                     {
                                                         <a href="@Url.Action("Edit","User", new { id = item.Id })" class="green" title="Edit">
-                                                            <i class="ace-icon fa fa-pencil"></i>
+                                                            <i class="ace-icon fa fa-pencil">Edit</i>
                                                         </a>
                                                         <a class="red" href="#" onclick="inactive_row('@item.Id') " title="Inactive">
                                                             <i class=" ace-icon fa fa-ban">
                                                             </i>
                                                         </a>
                                                         <a class="blue" href="#" onclick="reset_Password('@item.Id','@item.Name')" title="Reset Password">
-                                                            <i class=" ace-icon fa fa-undo">
+                                                            <i class=" ace-icon fa fa-undo">Password Reset
                                                             </i>
                                                         </a>
                                                     }
