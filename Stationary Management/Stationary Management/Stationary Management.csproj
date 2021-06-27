@@ -52,9 +52,15 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Linq.Dynamic, Version=1.0.6132.35681, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Dynamic.1.0.8\lib\net40\System.Linq.Dynamic.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -153,13 +159,17 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Common\Enum.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\RequisitionController.cs" />
     <Compile Include="Controllers\StoreController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="CustomRoleProvider.cs" />
+    <Compile Include="Entity\Customer.cs" />
     <Compile Include="Entity\Products.cs" />
+    <Compile Include="Entity\ProformaInvoice.cs" />
+    <Compile Include="Entity\ProformaInvoiceProductRelation.cs" />
     <Compile Include="Entity\Requisition.cs" />
     <Compile Include="Entity\Store.cs" />
     <Compile Include="Entity\User\AuditableEntity.cs" />
@@ -187,9 +197,15 @@
     <Compile Include="Migrations\201907060727026_ReqStatusUpdate.Designer.cs">
       <DependentUpon>201907060727026_ReqStatusUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106271427189_migForPI.cs" />
+    <Compile Include="Migrations\202106271427189_migForPI.Designer.cs">
+      <DependentUpon>202106271427189_migForPI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AuthenticatedUser.cs" />
+    <Compile Include="Models\ProformaInvoiceModel.cs" />
     <Compile Include="Models\RequisitionModel.cs" />
+    <Compile Include="Models\SearchViewModel.cs" />
     <Compile Include="Models\StoreModel.cs" />
     <Compile Include="Models\ProductModel.cs" />
     <Compile Include="Models\UserLoginModel.cs" />
@@ -197,8 +213,15 @@
     <Compile Include="Models\UserRegisterModel.cs" />
     <Compile Include="Models\UserRoleModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\CustomerRepository.cs" />
+    <Compile Include="Repository\CustomerUnitOfWork.cs" />
+    <Compile Include="Repository\ProformaInvoiceProductRelationRepository.cs" />
+    <Compile Include="Repository\ProformaInvoiceRepository.cs" />
+    <Compile Include="Repository\ProformaInvoiceUnitOfWork.cs" />
     <Compile Include="Repository\RequisitionRepository.cs" />
     <Compile Include="Repository\RequisitionUnitOfWork.cs" />
+    <Compile Include="service\CustomerService.cs" />
+    <Compile Include="service\ProformaInvoiceService.cs" />
     <Compile Include="service\RequisitionService.cs" />
     <Compile Include="service\StoreService.cs" />
     <Compile Include="service\ProductService.cs" />
@@ -221,7 +244,6 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\logo.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -307,6 +329,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907060727026_ReqStatusUpdate.resx">
       <DependentUpon>201907060727026_ReqStatusUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106271427189_migForPI.resx">
+      <DependentUpon>202106271427189_migForPI.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
