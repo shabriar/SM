@@ -162,6 +162,7 @@
     <Compile Include="Common\Enum.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\ProformaInvoiceController.cs" />
     <Compile Include="Controllers\RequisitionController.cs" />
     <Compile Include="Controllers\StoreController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -300,6 +301,7 @@
     <Content Include="Views\Requisition\Details.cshtml" />
     <Content Include="Views\Requisition\Edit.cshtml" />
     <Content Include="Views\Requisition\Index.cshtml" />
+    <Content Include="Views\ProformaInvoice\Add.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
