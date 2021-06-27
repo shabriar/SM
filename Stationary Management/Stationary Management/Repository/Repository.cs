@@ -15,6 +15,15 @@ namespace SCHM.Repo
         {
             _context = context;
         }
+        public void Delete(int id)
+        {
+            T item = GetById(id);
+            Delete(item);
+        }
+        public void Delete(T item)
+        {
+            item.IsDeleted = true;
+        }
         public virtual void Add(T entity)
         {
             _context.Set<T>().Add(entity);
@@ -65,79 +74,86 @@ namespace SCHM.Repo
                     return result.ToList();
             }
         }
+        public virtual void DeletePermanent(object id)
+        {
+            T entityToDelete = _context.Set<T>().Find(id);
+            DeletePermanent(entityToDelete);
+        }
 
-        //public virtual IEnumerable<T> GetDynamic(out int total, out int totalDisplay, Expression<Func<T, bool>> filter = null,
-        //    string orderBy = null, string includeProperties = "", int pageIndex = 1, int pageSize = 10, bool isTrackingOff = false)
-        //{
-        //    IQueryable<T> query = _context.Set<T>();
-        //    total = query.Count();
-        //    totalDisplay = query.Count();
+        public virtual IEnumerable<T> GetDynamic(out int total, out int totalDisplay, Expression<Func<T, bool>> filter = null,
+            string orderBy = null, string includeProperties = "", int pageIndex = 1, int pageSize = 10, bool isTrackingOff = false)
+        {
+            IQueryable<T> query = _context.Set<T>();
+            total = query.Count();
+            totalDisplay = query.Count();
 
-        //    if (filter != null)
-        //    {
-        //        query = query.Where(filter);
-        //        totalDisplay = query.Count();
-        //    }
+            if (filter != null)
+            {
+                query = query.Where(filter);
+                totalDisplay = query.Count();
+            }
 
-        //    foreach (var includeProperty in includeProperties.Split
-        //        (new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
-        //    {
-        //        query = query.Include(includeProperty);
-        //    }
+            foreach (var includeProperty in includeProperties.Split
+                (new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+            {
+                query = query.Include(includeProperty);
+            }
 
-        //    if (orderBy != null)
-        //    {
-        //        var result = query.OrderBy(orderBy).Skip((pageIndex - 1) * pageSize).Take(pageSize);
+            if (orderBy != null)
+            {
+                var result = query.OrderBy(orderBy).Skip((pageIndex - 1) * pageSize).Take(pageSize);
 
-        //        if (isTrackingOff){
-        //            return result.AsNoTracking().ToList();
-        //        }
-        //        else {
-        //            return result.Tolist();
-        //        }
-        //    }
-        //    else
-        //    {
-        //        var result = query.Skip((pageIndex - 1) * pageSize).Take(pageSize);
+                if (isTrackingOff)
+                {
+                    return result.AsNoTracking().ToList();
+                }
+                else
+                {
+                    return result.ToList();
+                }
+            }
+            else
+            {
+                var result = query.Skip((pageIndex - 1) * pageSize).Take(pageSize);
 
-        //        if (isTrackingOff)
-        //            return result.AsNoTracking().ToList();
-        //        else
-        //            return result.ToList();
-        //    }
-        //}
+                if (isTrackingOff)
+                    return result.AsNoTracking().ToList();
+                else
+                    return result.ToList();
+            }
+        }
 
-        //public virtual IEnumerable<T> GetDynamic(Expression<Func<T, bool>> filter = null, string orderBy = null,
-        //    string includeProperties = "", bool isTrackingOff = false)
-        //{
-        //    IQueryable<T> query = _context.Set<T>();
+        public virtual IEnumerable<T> GetDynamic(Expression<Func<T, bool>> filter = null, string orderBy = null,
+            string includeProperties = "", bool isTrackingOff = false)
+        {
+            IQueryable<T> query = _context.Set<T>();
 
-        //    if (filter != null)
-        //    {
-        //        query = query.Where(filter);
-        //    }
+            if (filter != null)
+            {
+                query = query.Where(filter);
+            }
 
-        //    foreach (var includeProperty in includeProperties.Split
-        //        (new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
-        //    {
-        //        query = query.Include(includeProperty);
-        //    }
+            foreach (var includeProperty in includeProperties.Split
+                (new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+            {
+                query = query.Include(includeProperty);
+            }
 
-        //    if (orderBy != null)
-        //    {
-        //        if (isTrackingOff)
-        //            return query.OrderBy(orderBy).AsNoTracking().ToList();
-        //        else
-        //            return query.OrderBy(orderBy).ToList();
-        //    }
-        //    else
-        //    {
-        //        if (isTrackingOff)
-        //            return query.AsNoTracking().ToList();
-        //        else
-        //            return query.ToList();
-        //    }
-        //}
+            if (orderBy != null)
+            {
+                if (isTrackingOff)
+                    return query.OrderBy(orderBy).AsNoTracking().ToList();
+                else
+                    return query.OrderBy(orderBy).ToList();
+            }
+            else
+            {
+                if (isTrackingOff)
+                    return query.AsNoTracking().ToList();
+                else
+                    return query.ToList();
+            }
+        }
 
         public virtual IEnumerable<T> GetAll(Expression<Func<T, bool>> filter = null, Func<IQueryable<T>,
             IOrderedQueryable<T>> orderBy = null, string includeProperties = "", bool isTrackingOff = false)

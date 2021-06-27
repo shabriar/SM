@@ -395,3 +395,10 @@ E:\MVC\Stationary Management\Stationary Management\obj\Debug\Stationary Manageme
 E:\MVC\Stationary Management\Stationary Management\obj\Debug\Stationary Management.csproj.CopyComplete
 E:\MVC\Stationary Management\Stationary Management\obj\Debug\Stationary Management.dll
 E:\MVC\Stationary Management\Stationary Management\obj\Debug\Stationary Management.pdb
+E:\CSE\Repository\SM\Stationary Management\Stationary Management\obj\Debug\Stationary_Management.Migrations.initial.resources
+E:\CSE\Repository\SM\Stationary Management\Stationary Management\obj\Debug\Stationary_Management.Migrations.StoreProduct.resources
+E:\CSE\Repository\SM\Stationary Management\Stationary Management\obj\Debug\Stationary_Management.Migrations.req.resources
+E:\CSE\Repository\SM\Stationary Management\Stationary Management\obj\Debug\Stationary_Management.Migrations.ReqStatusUpdate.resources
+E:\CSE\Repository\SM\Stationary Management\Stationary Management\obj\Debug\Stationary_Management.Migrations.migForPI.resources
+E:\CSE\Repository\SM\Stationary Management\Stationary Management\obj\Debug\Stationary Management.csproj.GenerateResource.cache
+E:\CSE\Repository\SM\Stationary Management\Stationary Management\obj\Debug\Stationary Management.csproj.CoreCompileInputs.cache
