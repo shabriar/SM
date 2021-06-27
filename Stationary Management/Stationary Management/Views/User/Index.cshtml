@@ -22,7 +22,6 @@
                 <div class="box-header with-border">
                     <h3 class="box-title">User List</h3>
                     <div class="box-tools pull-right">
-
                         <a href="@Url.Action("Register","User")" class="btn btn-box-tool" title="Add"> <i class="fa fa-plus"></i> Add</a>
                         
                         <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
@@ -41,6 +40,9 @@
                                         @Html.DisplayNameFor(model => model.Name)
                                     </th>
 
+                                    @*<th>
+                    @Html.DisplayNameFor(model => model.EmployeeType)
+                </th>*@
                                     <th>
                                         @Html.DisplayNameFor(model => model.Email)
                                     </th>

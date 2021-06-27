@@ -1,4 +1,4 @@
-﻿
+﻿@using SCHM.Common
 @model SCHM.Web.Models.UserRoleModel
 
 @{
@@ -66,7 +66,7 @@
                                             {
 
                                                 @Html.HiddenFor(model => model.RoleTaskList[i].PermissionName)
-                                                <label class="col-md-12"> @Html.CheckBoxFor(model => model.RoleTaskList[i].IsChecked, new { @class = "checkboxFor" }) @item.PermissionName</label>
+                                                <label class="col-md-12"> @Html.CheckBoxFor(model => model.RoleTaskList[i].IsChecked, new { @class = "checkboxFor" }) @item.PermissionName.ReplaceNullable("_", " ")</label>
                                                 i++;
                                             }
 

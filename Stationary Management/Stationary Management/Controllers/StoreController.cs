@@ -9,7 +9,7 @@ namespace Stationary_Management.Controllers
 {
     
      [Authorize]
-  
+   // [Roles("Global_SupAdmin,Configuration")]
     public class StoreController : Controller
     {
         // GET: Product

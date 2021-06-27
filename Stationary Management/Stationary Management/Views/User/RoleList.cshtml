@@ -1,4 +1,4 @@
-﻿
+﻿@using SCHM.Common
 @model IEnumerable<SCHM.Entities.UserRole>
 
 @{
@@ -53,14 +53,14 @@
                                             {
                                                 foreach (var i in item.RolePermissionCollection)
                                                 {
-                                                    taskAssigned += i.Permission + ", ";
+                                                    taskAssigned += i.Permission.ReplaceNullable("_", " ") + ", ";
                                                 }
                                             }
 
                                             @taskAssigned.Trim(',', ' ')
                                         </td>
                                         <td class="col s2">
-                                            <a href="@Url.Action("EditRole","User",new{id=item.Id})" class="btn btn-floating waves-effect waves-light green"><i class="fa fa-pencil"></i>Edit</a>
+                                            <a href="@Url.Action("EditRole","User",new{id=item.Id})" class="btn-floating waves-effect waves-light green"><i class="fa fa-pencil"></i></a>
                                             @*<a class="btn-floating waves-effect waves-light red sweetalert-warning" data-id="@item.Id"><i class="material-icons">delete</i></a>*@
                                         </td>
                                     </tr>

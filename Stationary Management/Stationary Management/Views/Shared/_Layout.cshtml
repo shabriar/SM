@@ -1,5 +1,4 @@
-﻿@using SCHM.Web.Models;
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -21,35 +20,12 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-
-                    @if (User.IsInRole("User") || User.IsInRole("Global_SupAdmin"))
-                    {
-                        <li>@Html.ActionLink("User", "Index", "User")</li>
-                    }
-                    @if (User.IsInRole("User_Roles") || User.IsInRole("Global_SupAdmin"))
-                    {
-                        <li>@Html.ActionLink("User Roles", "Roles", "User")</li>
-                    }
-                    @if (User.IsInRole("Product") || User.IsInRole("Global_SupAdmin"))
-                    {
-                        <li>@Html.ActionLink("Product", "Index", "Product")</li>
-                    }
-                    @if (User.IsInRole("Store") || User.IsInRole("Global_SupAdmin"))
-                    {
-                        <li>@Html.ActionLink("Store", "Index", "Store")</li>
-                    }
-                    @if (User.IsInRole("Requisition") || User.IsInRole("Global_SupAdmin"))
-                    {
-                        <li>@Html.ActionLink("Requisition", "Index", "Requisition")</li>
-                    }
-                  
-                    <li class="text-success" style="margin: 16px;">Wellcome, @AuthenticatedUser.GetUserFromIdentity().FullName</li>
-                    <li class="pull-right">@Html.ActionLink("Logout", "LogOut", "User")</li>
-
-
-
+                    <li>@Html.ActionLink("Logout", "LogOut", "User")</li>
+                    <li>@Html.ActionLink("User", "Index", "User")</li>
+                    <li>@Html.ActionLink("Product", "Index", "Product")</li>
+                    <li>@Html.ActionLink("Store", "Index", "Store")</li>
+                    <li>@Html.ActionLink("Requisition", "Index", "Requisition")</li>
                 </ul>
-              
             </div>
         </div>
     </div>

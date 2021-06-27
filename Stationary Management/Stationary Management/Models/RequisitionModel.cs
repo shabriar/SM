@@ -54,7 +54,6 @@ namespace SCHM.Web.Models
         public void Add()
         {
             base.Status = 1;
-            base.ReqStatus = false;
             base.CreatedBy = AuthenticatedUser.GetUserFromIdentity().UserId;
             _requisitionService.AddStore(this);
         }
@@ -68,12 +67,8 @@ namespace SCHM.Web.Models
         {
             _requisitionService.DeleteRequisition(id, AuthenticatedUser.GetUserFromIdentity().UserId.ToString());
         }
-        public void Approve(int id)
-        {
-            _requisitionService.Approve(id);
-        }
 
-
+       
         public void Dispose()
         {
             _requisitionService.Dispose();

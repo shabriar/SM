@@ -1,5 +1,4 @@
-﻿@using SCHM.Web.Models;
-@model IEnumerable<Stationary_Management.Entity.Requisition>
+﻿@model IEnumerable<Stationary_Management.Entity.Requisition>
 @{
     ViewBag.Title = "Requisition";
 }
@@ -20,16 +19,16 @@
                 <h3 class="box-title">Requisition Products List</h3>
                 <div class="box-tools pull-right">
                     @*<a href="@Url.Action("Import","Product")" class="btn btn-box-tool" title="Import Product"><i class="fa fa-wrench"></i></a>
-                        <a href="@Url.Action("ImportWarehouseStock","Product")" class="btn btn-box-tool" title="Import Product"><i class="fa fa-pencil"></i></a>*@
+                    <a href="@Url.Action("ImportWarehouseStock","Product")" class="btn btn-box-tool" title="Import Product"><i class="fa fa-pencil"></i></a>*@
 
                     <a href="@Url.Action("Add", "Requisition")" class="btn btn-default btn-box-tool">
                         <i class="fa fa-plus"></i>Add
                     </a>
                     @*<div class="btn-group">
-                            <button type="button" class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                <i class="fa fa-wrench"></i>
-                            </button>
-                        </div>*@
+                        <button type="button" class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                            <i class="fa fa-wrench"></i>
+                        </button>
+                    </div>*@
                     <a href="@Url.Action("Index", "Requisition")" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></a>
                 </div>
             </div>
@@ -55,7 +54,7 @@
                                         @Html.DisplayNameFor(model => model.RequisitionNo)
                                     </th>
                                     <th>
-                                        Approval Status
+                                        @Html.DisplayNameFor(model => model.ReqStatus)
                                     </th>
 
                                     <th>Actions</th>
@@ -84,26 +83,18 @@
                                                 @Html.DisplayFor(modelItem => item.RequisitionNo)
                                             </td>
                                             <td>
-                                                @(item.ReqStatus?"Approve":"Pending")
+                                                @Html.DisplayFor(modelItem => item.ReqStatus)
                                             </td>
 
 
                                             <td>
-                                                @if (item.CreatedBy == AuthenticatedUser.GetUserFromIdentity().UserId)
-                                                {
-                                                    <a class="btn btn-default btn-xs" href="@Url.Action("Edit","Requisition",new {id=item.Id })" title="Edit"><i class="fa fa-pencil"></i>Edit</a>
-                                                    <a class="btn btn-default btn-xs" href="@Url.Action("Delete","Requisition",new {id=item.Id })" title="Delete"><i class="fa fa-pencil"></i>Delete</a>
-                                                }
-                                                @if (User.IsInRole("Requisition_Approval") && !item.ReqStatus)
-                                                {
-                                                    <a onclick="confirm('Do you want to approve?')" class="btn btn-default btn-xs" href="@Url.Action("Approve","Requisition",new {id=item.Id })" title="Edit"><i class="fa fa-pencil"></i>Approve</a>
-                                                    <a class="btn btn-default btn-xs" href="@Url.Action("Details","Requisition",new {id=item.Id })" title="Details"><i class="fa fa-pencil"></i>Details</a>
-
-                                                }
+                                                <a class="btn btn-default btn-xs" href="@Url.Action("Edit","Requisition",new {id=item.Id })" title="Edit"><i class="fa fa-pencil"></i>Edit</a>
+                                                <a class="btn btn-default btn-xs" href="@Url.Action("Delete","Requisition",new {id=item.Id })" title="Delete"><i class="fa fa-pencil"></i>Delete</a>
+                                                <a class="btn btn-default btn-xs" href="@Url.Action("Details","Requisition",new {id=item.Id })" title="Delete"><i class="fa fa-pencil">Details</i></a>
                                             </td>
 
                                         </tr>
-
+                                       
                                     </sometag>
 
                                 }

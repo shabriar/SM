@@ -39,6 +39,7 @@ namespace SCHM.Services
         {
             var newRequisition = new Requisition
             {
+                Products = requisition.Products,
                 ProductsId = requisition.ProductsId,
                 RequisitionQuantity = requisition.RequisitionQuantity,
                 RequisitionNo = requisition.RequisitionNo,
@@ -47,6 +48,11 @@ namespace SCHM.Services
                
                 CreatedBy = requisition.CreatedBy
             };
+            var ProductStockIn = _ProductUnitOfWork.ProductRepository.GetById(requisition.ProductsId);
+            ProductStockIn.StockAmount -= requisition.RequisitionQuantity;
+            _ProductUnitOfWork.ProductRepository.Update(ProductStockIn);
+            _ProductUnitOfWork.Save();
+
             _RequisitionUnitOfWork.RequisitionRepository.Add(newRequisition);
             _RequisitionUnitOfWork.Save();
             return newRequisition.Id;
@@ -54,7 +60,9 @@ namespace SCHM.Services
         public void EditRequisition(Requisition requisition)
         {
             var RequisitionsEntry = GetRequisitionById(requisition.Id);
+            RequisitionsEntry.Products = requisition.Products;
             RequisitionsEntry.ProductsId = requisition.ProductsId;           
+            RequisitionsEntry.RequisitionNo = requisition.RequisitionNo;
             RequisitionsEntry.ReqStatus = requisition.ReqStatus;
             var ProductStockIn = _ProductUnitOfWork.ProductRepository.GetById(requisition.ProductsId);
             ProductStockIn.StockAmount += RequisitionsEntry.RequisitionQuantity;
@@ -80,21 +88,6 @@ namespace SCHM.Services
         public void Dispose()
         {
             _storeUnitOfWork.Dispose();
-        }
-        public void Approve(int id)
-        {
-            var RequisitionsEntry = GetRequisitionById(id);
-            if (RequisitionsEntry != null)
-            {
-                RequisitionsEntry.ReqStatus = true;
-                _RequisitionUnitOfWork.RequisitionRepository.Update(RequisitionsEntry);
-                _RequisitionUnitOfWork.Save();
-
-                var ProductStockIn = _ProductUnitOfWork.ProductRepository.GetById(RequisitionsEntry.ProductsId);
-                ProductStockIn.StockAmount -= RequisitionsEntry.RequisitionQuantity;
-                _ProductUnitOfWork.ProductRepository.Update(ProductStockIn);
-                _ProductUnitOfWork.Save();
-            }
         }
     }
 }
