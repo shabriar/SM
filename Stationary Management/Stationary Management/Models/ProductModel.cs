@@ -34,6 +34,7 @@ namespace SCHM.Web.Models
                 ProductName = productEntry.ProductName;
                 Details = productEntry.Details;
                 StockAmount = productEntry.StockAmount;
+                UnitPriceUsd = productEntry.UnitPriceUsd;
 
                 CreatedBy = productEntry.CreatedBy;
                 CreatedByUser = productEntry.CreatedByUser;

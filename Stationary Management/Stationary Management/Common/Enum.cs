@@ -5,7 +5,24 @@ using System.Web;
 
 namespace Stationary_Management.Common
 {
-
+    public enum EnumPfiCatagory
+    {
+        Indent,
+        PFI
+    }
+    public enum EnumIncoterms
+    {
+        CFR,
+        CPT,
+        CPT_CFR,
+        FOB,
+        DP,
+        TT,
+        FCA,
+        CIF,
+        CIP,
+        EXW
+    }
     public enum EnumActiveDactiveStatus : byte
     {
         Inactive = 0,      // Inactive or deleted,

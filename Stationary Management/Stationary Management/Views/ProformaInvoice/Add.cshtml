@@ -1,7 +1,365 @@
-﻿
+﻿@using Stationary_Management.Common
+@model  Stationary_Management.Models.ProformaInvoiceModel
 @{
-    ViewBag.Title = "Add";
+    ViewBag.Title = "PI";
 }
+<section class="content-header">
+    <h1>
+        PI
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">PI</a></li>
+        <li class="active">Add</li>
+    </ol>
+</section>
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            @using (Html.BeginForm("Add", "Product", FormMethod.Post, new { @class = "form-horizontal", @id = "warehouseForm" }))
+            {
 
-<h2>Add</h2>
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">PI Add</h3>
+                        <div class="box-tools pull-right">
+                            <a href="@Url.Action("Index", "Product")" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></a>
+                        </div>
+                    </div>
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <!-- /.tab-pane -->
+                                <div class="active tab-pane" id="ProductSetting">
+                                    <div class="row">
+                                        <div class="col-md-12">
 
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    @Html.LabelFor(model => model.SellerId, new { @class = "col-md-4 control-label text-left required-label" })
+                                                    <div class="col-md-6">
+                                                        @Html.DropDownListFor(model => model.SellerId, new SelectList(Model.SellerList, "Id", "Name"), "Select--", new { @class = "form-control select2", required = "required" })
+                                                        @Html.ValidationMessageFor(model => model.SellerId)
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    @Html.LabelFor(model => model.PfiCategory, new { @class = "control-label col-md-4 text-left" })
+                                                    <div class="col-md-6">
+
+
+                                                        @Html.DropDownListFor(model => model.PfiCategory, Enum.GetNames(typeof(EnumPfiCatagory)).Select(name => new SelectListItem() { Text = name, Value = name }), new { @class = "form-control " })
+                                                        @Html.ValidationMessageFor(model => model.PfiCategory, null, new { @class = "control-label" })
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    @Html.LabelFor(model => model.IncoTerms, new { @class = "control-label col-md-4 text-left" })
+                                                    <div class="col-md-6">
+
+                                                        @Html.DropDownListFor(model => model.IncoTerms, Enum.GetNames(typeof(EnumIncoterms)).Select(name => new SelectListItem() { Text = name.Replace('_', '/'), Value = name }), "--Select---", new { @class = "form-control ", @onchange = "LoadPaymentTerms(this)" })
+                                                        @Html.ValidationMessageFor(model => model.IncoTerms, null, new { @class = "control-label" })
+                                                    </div>
+                                                </div>
+                                                @*<div class="form-group">
+                                                        @Html.LabelFor(model => model.PaymentTermsId, new { @class = "col-md-4 control-label text-left required-label" })
+                                                        <div class="col-md-6">
+                                                            @Html.DropDownListFor(model => model.PaymentTermsId, Model.PaymentTermsSelectList, "--Select--", new { @class = "form-control ", required = "required" })
+                                                            @Html.ValidationMessageFor(model => model.PaymentTermsId)
+                                                        </div>
+                                                    </div>*@
+                                                <div class="form-group">
+                                                    @Html.LabelFor(model => model.PoNo, new { @class = "col-md-4 control-label text-left" })
+                                                    <div class="col-md-6">
+                                                        @Html.TextBoxFor(model => model.PoNo, new { @class = "form-control " })
+                                                        @Html.ValidationMessageFor(model => model.PoNo)
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    @Html.LabelFor(model => model.Remarks, new { @class = "col-md-4 control-label text-left" })
+                                                    <div class="col-md-6">
+                                                        @Html.TextAreaFor(model => model.Remarks, new { @class = "form-control " })
+                                                        @Html.ValidationMessageFor(model => model.Remarks)
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    @Html.LabelFor(model => model.PfiDate, new { @class = "col-md-4 control-label text-left" })
+                                                    <div class="col-md-6">
+                                                        <div class="input-group ">
+                                                            @Html.TextBoxFor(model => model.PfiDate, new { @class = "form-control  myDatepicker", autocomplete = "off", @Value = string.Format("{0:dd-MMM-yyyy}", DateTime.Now), @required = true })
+                                                            <span class="input-group-addon add-on addon-xs myDatepickerIcon"><span class="glyphicon glyphicon-calendar"></span></span>
+                                                        </div>
+                                                        @Html.ValidationMessageFor(model => model.PfiDate)
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    @Html.LabelFor(model => model.IndentValidity, new { @class = "col-md-4 control-label text-left" })
+                                                    <div class="col-md-6">
+                                                        @Html.TextBoxFor(model => model.IndentValidity, new { @class = "form-control " })
+                                                        @Html.ValidationMessageFor(model => model.IndentValidity)
+                                                    </div>
+                                                </div>
+                                                @*<div class="form-group">
+                                                        @Html.Label("Port of shipment", new { @class = "col-md-4 control-label text-left" })
+                                                        <div class="col-md-6">
+                                                            @Html.ListBoxFor(model => model.PortOfShipmentIds, Model.PortOfShipmentList, new { @class = "form-control  select2", @multiple = "multiple", @placeholder = "Select a Port" })
+                                                            @Html.ValidationMessageFor(model => model.PortOfShipmentIds)
+                                                        </div>
+                                                    </div>*@
+                                                @*<div class="form-group">
+                                                        @Html.Label("Country Of Origin", new { @class = "col-md-4 control-label text-left" })
+                                                        <div class="col-md-6">
+                                                            @Html.ListBoxFor(model => model.CountryOfOriginIds, Model.CountryOfOriginList, new { @class = "form-control  select2", @multiple = "multiple", @placeholder = "Select a Country" })
+                                                            @Html.ValidationMessageFor(model => model.CountryOfOriginIds)
+                                                        </div>
+                                                    </div>*@
+                                                @*<div class="form-group">
+                                                        @Html.LabelFor(model => model.CountryOfOrigins, new { @class = "col-md-4 control-label text-left" })
+                                                        <div class="col-md-6">
+                                                            @Html.TextBoxFor(model => model.CountryOfOrigins, new { @class = "form-control " })
+                                                            @Html.ValidationMessageFor(model => model.CountryOfOrigins)
+                                                        </div>
+                                                    </div>*@
+                                                <div class="form-group">
+                                                    @Html.LabelFor(model => model.BuyerId, new { @class = "col-md-4 control-label text-left required-label" })
+                                                    <div class="col-md-6">
+                                                        @Html.DropDownListFor(model => model.BuyerId, new SelectList(Model.SellerList, "Id", "Name"), "Select--", new { @class = "form-control select2", required = "required" })
+                                                        @Html.ValidationMessageFor(model => model.BuyerId)
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    @Html.LabelFor(model => model.ProductType, new { @class = "col-md-4 control-label text-left" })
+                                                    <div class="col-md-6">
+                                                        @Html.TextBoxFor(model => model.ProductType, new { @class = "form-control " })
+                                                        @Html.ValidationMessageFor(model => model.ProductType)
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <table class="table table-bordered table-condensed table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <td colspan="12" style="text-align:center" class="alert alert-success">Products</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>#SN</th>
+                                                        <th>Description</th>
+                                                        @*<th>Agent</th>*@
+                                                        <th>HS Code</th>
+                                                        <th>Pack.</th>
+                                                        <th>Quantity</th>
+                                                        <th>Unit Price</th>
+                                                        <th>Shipment</th>
+                                                        <th>Total</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="productTbody">
+                                                    <tr>
+                                                        <td width="4%">
+                                                            <label id="lblSerial">1</label>
+                                                        </td>
+                                                        <td width="25%">
+                                                            @Html.DropDownListFor(model => model.PFIProductList[0].ProductId, new SelectList(Model.ProductList.Select(x => new SelectListItem() { Text = x.ProductName + " (" + x.ProductCode + ")", Value = x.Id.ToString() }), "Value", "Text"), "Choose---", new { @class = "select2 form-control", @onchange = "LoadProductDetailFunc(this)" })
+                                                            @*@Html.DropDownListFor(model => model.PFIProductList[0].ProductId, Enumerable.Empty<SelectListItem>(), "Choose--", new { @class = "select2 form-control", @onchange = "LoadProductDetailFunc(this)" })*@
+                                                        </td>
+                                                        @*<td width="15%">
+                                                                @Html.DropDownListFor(model => model.PFIProductList[0].AgentId, Model.AgentList, "Choose--", new { @class = "form-control agent select2" })
+                                                                @Html.ValidationMessageFor(model => model.PFIProductList[0].AgentId)
+                                                            </td>*@
+                                                        <td width="10%">@Html.TextBox("txtHSCode", null, new { @class = "form-control" })</td>
+                                                        <td width="8%">@Html.TextBox("txtPackKg", null, new { @class = "form-control", @readonly = "readonly" })</td>
+                                                        <td>@Html.TextBoxFor(model => model.PFIProductList[0].Quantity, new { @class = "form-control", @type = "number", @onkeyup = "Calculatetotal($(this))" })</td>
+                                                        <td>
+                                                            @Html.Hidden("OrginPrice", new { @Value = 0 })
+                                                            @Html.TextBoxFor(model => model.PFIProductList[0].UnitPrice, new { @class = "form-control", @type = "number", @onkeyup = "Calculatetotal($(this));AssignOriginValue($(this))" })
+                                                        </td>
+                                                        <td width="8%">
+                                                            @Html.DropDownListFor(model => model.PFIProductList[0].ShipmentMode, Enum.GetValues(typeof(EnumShipmentMode)).Cast<EnumShipmentMode>().Select(name => new SelectListItem() { Text = name.ToString().Replace("_", " "), Value = ((byte)name).ToString() }), new { @class = "form-control ", @onchange = "CalculateAirFreight()" })
+                                                        </td>
+                                                        <td width="10%">@Html.TextBoxFor(model => model.PFIProductList[0].TotalPrice, new { @class = "form-control", @readonly = "readonly" })</td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                                <tfoot>
+                                                    <tr>
+                                                        <td colspan="5" style="text-align:center">@Html.Label("Total") :</td>
+                                                        <td>@Html.TextBoxFor(model => model.TotalQuantity, new { @class = "form-control", @readonly = "readonly" })</td>
+                                                        <td colspan="1">@Html.TextBoxFor(model => model.AirFreightChargePerUnit, new { @class = "form-control", @placeHolder = "Air Freight Charge/Unit", @onkeyup = "CalculateAirFreight()", @onclick = "selectAllText(this)", @Value = 4, @title = "Air Freight" })</td>
+                                                        <td>@Html.TextBox(" ", null, new { @class = "form-control", @readonly = "readonly", id = "TotalPfiValue" })</td>
+                                                        <td class="text-center"><span onclick="AddNewRowFunc()" class="btn btn-default btn-box-tool" style="font-size: 22px;" />+</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td colspan="6">
+                                                            <span class="pull-right">Special Discount</span>
+                                                        </td>
+
+                                                        <td colspan="1">
+                                                            <div class="col-md-10 paddingReduce">
+                                                                @Html.TextBoxFor(model => model.DiscountValue, new { @class = "form-control", @placeHolder = "Discount Value", @onkeyup = "CalculateDiscount()", @onclick = "selectAllText(this)", @Value = 0 })
+                                                            </div>
+                                                            <div class="col-md-2 paddingReduce"> <label>@Html.CheckBoxFor(model => model.IsPercentChecked, new { @onclick = "return false" }) %</label></div>
+                                                        </td>
+
+                                                        <td>@Html.TextBoxFor(model => model.PfiValue, new { @class = "form-control", @readonly = "readonly" })</td>
+
+                                                        <td></td>
+                                                    </tr>
+                                                </tfoot>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.tab-content -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-footer">
+                        <div class="col-md-12">
+                            <a href="@Url.Action("Index", "Product")" class="btn btn-danger btn-sm"><i class="fa fa-times-circle"></i> Cancel</a>
+                            <button type="submit" class="btn btn-success pull-right btn-sm " , onclick="FromSubmitFunction()"> <i class="fa fa-save"></i> Save</button>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+<script>
+    var option1 = "";
+</script>
+
+@*@foreach (var pro in Model.ProductList)
+    {
+        <script>
+            option1 = option1 + '<option value="@pro.Value">@pro.Text</option>'
+        </script>
+    }*@
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/AjaxCall")
+    @Scripts.Render("~/Scripts/AjaxCall")
+    <script src="~/Scripts/AjaxCall.js"></script>
+    <script>
+        //$('.datepicker').datepicker({
+        //    autoclose: true,
+        //    format: 'dd-M-yyyy'
+        //})
+        //function FromSubmitFunction() {
+        //    var isZero = false;
+        //    $('#warehouseTbody').find('td input[name$=".QuantityStock"]').each(function () {
+        //        if ($(this).val() < 0) {
+        //            isZero = true;
+        //        }
+        //    });
+
+        //    if (isZero) {
+        //        alert("Quantity cannot less than Zero");
+        //    }
+        //    else {
+        //        $('#warehouseForm').submit();
+        //    }
+        //}
+        function AddNewRowFunc() {
+            console.log("Add");
+
+            var trCount = $("#productTbody").find('tr').length;
+
+            var option = "";
+            $("#PFIProductList_0__ProductId option").each(function () {
+                option = option + '<option value=' + $(this).val() + '>' + $(this).text() + '</option>';
+            });
+
+            $(productTbody).append(
+                '<tr>' +
+                '<td width="4%">' +
+                '<label id="lblSerial">' + (trCount + 1) + '</label>' +
+                '</td>' +
+                '<td width="25%">' +
+                '<select class="select2 form-control" data-val="true" data-val-number="The field ProductId must be a number." data-val-required="The ProductId field is required." id="PFIProductList_' + trCount + '__ProductId" name="PFIProductList[' + trCount + '].ProductId" onchange="LoadProductDetailFunc(this)">' +
+                option +
+                '</select>' +
+                '</td>' +
+                '<td width="10%"><input class="form-control" id="txtHSCode" name="txtHSCode" type="text" value=""></td>' +
+                ' <td width="8%"><input class="form-control" id="txtPackKg" name="txtPackKg" readonly="readonly" type="text" value=""></td>' +
+                '<td><input class="form-control" data-val="true" data-val-number="The field Quantity must be a number." data-val-required="The Quantity field is required." id="PFIProductList_' + trCount + '__Quantity" name="PFIProductList[' + trCount + '].Quantity" onkeyup="Calculatetotal($(this))" type="number" value=""></td>' +
+                '<td>' +
+                '<input id="OrginPrice" name="OrginPrice" type="hidden" value="{ Value = 0 }">' +
+                '<input class="form-control" data-val="true" data-val-number="The field Unit Price must be a number." data-val-required="The Unit Price field is required." id="PFIProductList_' + trCount + '__UnitPrice" name="PFIProductList[' + trCount + '].UnitPrice" onkeyup="Calculatetotal($(this));AssignOriginValue($(this))" type="number" value="">' +
+                '</td>' +
+                '<td width="8%">' +
+                '<select class="form-control " id="PFIProductList_' + trCount + '__ShipmentMode" name="PFIProductList[' + trCount + '].ShipmentMode" onchange="CalculateAirFreight()"><option value="1">Sea</option>' +
+                '<option value="2">Air</option>' +
+                '<option value="3">Road</option>' +
+                '</select>' +
+                '</td > ' +
+                '< td width = "10%" > <input class="form-control" data-val="true" data-val-number="The field Total Price must be a number." id="PFIProductList_' + trCount + '__TotalPrice" name="PFIProductList[' + trCount + '].TotalPrice" readonly="readonly" type="text" value=""></td>' +
+                '<td></td>' +
+                '<td style="text-align: center;"><span onclick="removetr(this)" class=" btn btn-default btn-box-tool text-danger" style="font-size: 22px;">x</span></td>' +
+                +'</tr>')
+        }
+        function removetr(obj) {
+            $(obj).closest('tr').remove();
+            SerialRefresh();
+            //GrandTotalCalculate();
+            //GrandQtyCalculate();
+            //CalculateDiscount();
+        }
+        function SerialRefresh() {
+            var row = 1;
+            $("#productTbody").find('tr').each(function () {
+                $(this).find('[id="lblSerial"]').text(row);
+                row++;
+            });
+        }
+        function LoadProductDetailFunc(obj) {
+        customerId = $("#BuyerId").val();
+        productId = $(obj).val();
+        var url = '@Url.Action("GetProductDetailsForPIByProId", "Product")';
+        if (customerId != '' && productId != '') {
+            var paramData = { customerId: customerId, productId: productId }
+            ajaxCall(url, paramData, "renderProformaInvoiceLoad", "POST", obj)
+            }
+        }
+
+
+
+        function renderProformaInvoiceLoad(data, obj) {
+            $(obj).closest('tr').find("[id='txtHSCode']").val(data.ProductCode);
+            $(obj).closest('tr').find("[id='txtPackKg']").val(data.ProductCode);
+            $(obj).closest('tr').find("[name$='.UnitPrice']").val(data.UnitPrice);
+            $(obj).closest('tr').find("[name$='.Quantity']").val(data.StockAmount);
+            $(obj).closest('tr').find("[name='OrginPrice']").val(data.UnitPrice);;
+
+            //$('#PortOfShipmentIds option[value=' + data.CountryId + ']').prop("selected", true);
+            //$('#PortOfShipmentIds').select2().trigger('change');
+
+            //$('#PortOfShipmentIds option[value=' + data.CountryId + ']').prop("selected", true);
+            //$('#PortOfShipmentIds').select2().trigger('change');
+
+            //$('#CountryOfOriginIds option[value=' + data.CountryName + ']').prop("selected", true);
+            //$('#CountryOfOriginIds').select2().trigger('change');
+
+            //CalculateAirFreight();
+            //Calculatetotal(obj);
+            //CalculateDiscount();
+        }
+
+        @*var customerId = $("#BuyerId").val();
+            var url = '@Url.Action("GetProductDetailsForPIById", "Product")';
+            LoadProductDetailAjax(customerId, obj, url);
+    //
+    var id = $(obj).val();
+    //console.log(id);
+    if (id != '' && customerId != '') {
+        var paramData = { customerId: customerId, id: id };
+        ajaxCall(url, paramData, "renderProformaInvoiceLoad", "POST", obj);
+        }*@
+
+    </script>
+}

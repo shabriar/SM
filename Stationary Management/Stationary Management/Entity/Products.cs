@@ -21,5 +21,7 @@ namespace Stationary_Management.Entity
 
         [Display(Name = "Stock Amount")]
         public double StockAmount { get; set; }
+        [Display(Name = "UnitPriceUsd Amount")]
+        public double UnitPriceUsd { get; set; }
     }
 }

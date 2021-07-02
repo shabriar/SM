@@ -229,7 +229,7 @@ namespace Stationary_Management.Models
                 {
                     productRelation.PfiId = returnId;
                     productRelation.CreatedBy = CurrentUserId;
-                    //productRelation.CreatedDate = DateTime.Now;
+                    productRelation.CreatedAt = DateTime.Now;
                     _proformaInvoiceService.AddProductRelation(productRelation);
                 }
             }

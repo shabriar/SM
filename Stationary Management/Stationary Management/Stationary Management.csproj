@@ -202,6 +202,10 @@
     <Compile Include="Migrations\202106271427189_migForPI.Designer.cs">
       <DependentUpon>202106271427189_migForPI.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107020622013_migForProductPrice.cs" />
+    <Compile Include="Migrations\202107020622013_migForProductPrice.Designer.cs">
+      <DependentUpon>202107020622013_migForProductPrice.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AuthenticatedUser.cs" />
     <Compile Include="Models\ProformaInvoiceModel.cs" />
@@ -249,17 +253,28 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\adminlte.js" />
+    <Content Include="Scripts\adminlte.min.js" />
+    <Content Include="Scripts\AjaxCall.js" />
+    <Content Include="Scripts\app.js" />
+    <Content Include="Scripts\app.min.js" />
+    <Content Include="Scripts\BarcodeJs.all.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\CommercialInvoice.js" />
+    <Content Include="Scripts\Common.js" />
+    <Content Include="Scripts\dashboard2.js" />
+    <Content Include="Scripts\demo.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-confirm.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -334,6 +349,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106271427189_migForPI.resx">
       <DependentUpon>202106271427189_migForPI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107020622013_migForProductPrice.resx">
+      <DependentUpon>202107020622013_migForProductPrice.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

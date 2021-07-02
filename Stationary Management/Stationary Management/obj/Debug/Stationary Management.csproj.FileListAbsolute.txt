@@ -359,7 +359,9 @@ E:\CSE\Repository\SM\Stationary Management\Stationary Management\bin\Microsoft.A
 E:\CSE\Repository\SM\Stationary Management\Stationary Management\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 E:\CSE\Repository\SM\Stationary Management\Stationary Management\bin\Microsoft.Web.Infrastructure.dll
 E:\CSE\Repository\SM\Stationary Management\Stationary Management\bin\Newtonsoft.Json.dll
+E:\CSE\Repository\SM\Stationary Management\Stationary Management\bin\PagedList.dll
 E:\CSE\Repository\SM\Stationary Management\Stationary Management\bin\System.Diagnostics.DiagnosticSource.dll
+E:\CSE\Repository\SM\Stationary Management\Stationary Management\bin\System.Linq.Dynamic.dll
 E:\CSE\Repository\SM\Stationary Management\Stationary Management\bin\System.Web.Helpers.dll
 E:\CSE\Repository\SM\Stationary Management\Stationary Management\bin\System.Web.Mvc.dll
 E:\CSE\Repository\SM\Stationary Management\Stationary Management\bin\System.Web.Optimization.dll
@@ -370,6 +372,7 @@ E:\CSE\Repository\SM\Stationary Management\Stationary Management\bin\System.Web.
 E:\CSE\Repository\SM\Stationary Management\Stationary Management\bin\WebGrease.dll
 E:\CSE\Repository\SM\Stationary Management\Stationary Management\bin\EntityFramework.xml
 E:\CSE\Repository\SM\Stationary Management\Stationary Management\bin\EntityFramework.SqlServer.xml
+E:\CSE\Repository\SM\Stationary Management\Stationary Management\bin\PagedList.xml
 E:\CSE\Repository\SM\Stationary Management\Stationary Management\bin\System.Web.Helpers.xml
 E:\CSE\Repository\SM\Stationary Management\Stationary Management\bin\System.Web.Mvc.xml
 E:\CSE\Repository\SM\Stationary Management\Stationary Management\bin\System.Web.Optimization.xml
@@ -385,17 +388,15 @@ E:\CSE\Repository\SM\Stationary Management\Stationary Management\bin\Microsoft.A
 E:\CSE\Repository\SM\Stationary Management\Stationary Management\bin\Microsoft.AI.WindowsServer.xml
 E:\CSE\Repository\SM\Stationary Management\Stationary Management\bin\Microsoft.AI.Web.xml
 E:\CSE\Repository\SM\Stationary Management\Stationary Management\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\CSE\Repository\SM\Stationary Management\Stationary Management\obj\Debug\Stationary Management.csprojAssemblyReference.cache
 E:\CSE\Repository\SM\Stationary Management\Stationary Management\obj\Debug\Stationary_Management.Migrations.initial.resources
 E:\CSE\Repository\SM\Stationary Management\Stationary Management\obj\Debug\Stationary_Management.Migrations.StoreProduct.resources
 E:\CSE\Repository\SM\Stationary Management\Stationary Management\obj\Debug\Stationary_Management.Migrations.req.resources
 E:\CSE\Repository\SM\Stationary Management\Stationary Management\obj\Debug\Stationary_Management.Migrations.ReqStatusUpdate.resources
+E:\CSE\Repository\SM\Stationary Management\Stationary Management\obj\Debug\Stationary_Management.Migrations.migForPI.resources
+E:\CSE\Repository\SM\Stationary Management\Stationary Management\obj\Debug\Stationary_Management.Migrations.migForProductPrice.resources
 E:\CSE\Repository\SM\Stationary Management\Stationary Management\obj\Debug\Stationary Management.csproj.GenerateResource.cache
 E:\CSE\Repository\SM\Stationary Management\Stationary Management\obj\Debug\Stationary Management.csproj.CoreCompileInputs.cache
 E:\CSE\Repository\SM\Stationary Management\Stationary Management\obj\Debug\Stationary Management.csproj.CopyComplete
 E:\CSE\Repository\SM\Stationary Management\Stationary Management\obj\Debug\Stationary Management.dll
 E:\CSE\Repository\SM\Stationary Management\Stationary Management\obj\Debug\Stationary Management.pdb
-E:\CSE\Repository\SM\Stationary Management\Stationary Management\obj\Debug\Stationary_Management.Migrations.migForPI.resources
-E:\CSE\Repository\SM\Stationary Management\Stationary Management\obj\Debug\Stationary Management.csprojAssemblyReference.cache
-E:\CSE\Repository\SM\Stationary Management\Stationary Management\bin\System.Linq.Dynamic.dll
-E:\CSE\Repository\SM\Stationary Management\Stationary Management\bin\PagedList.dll
-E:\CSE\Repository\SM\Stationary Management\Stationary Management\bin\PagedList.xml

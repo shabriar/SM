@@ -39,6 +39,7 @@ namespace SCHM.Services
                 ProductCode = products.ProductCode,
                 Details = products.Details,
                 StockAmount = products.StockAmount,
+                UnitPriceUsd = products.UnitPriceUsd,
                
                 CreatedBy = products.CreatedBy
             };
@@ -54,6 +55,7 @@ namespace SCHM.Services
             Productsntry.ProductName = products.ProductName;
             Productsntry.Details = products.Details;
             Productsntry.StockAmount = products.StockAmount;
+            Productsntry.UnitPriceUsd = products.UnitPriceUsd;
 
             Productsntry.UpdatedAt = products.UpdatedAt;
             Productsntry.UpdatedBy = products.UpdatedBy;

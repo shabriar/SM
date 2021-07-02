@@ -1,4 +1,5 @@
 ﻿using SCHM.Web.Models;
+using Stationary_Management.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -64,6 +65,14 @@ namespace Stationary_Management.Controllers
         {
             return View();
         }
-        
+        public JsonResult GetProductDetailsForPIByProId(int customerId, int productId)
+        {
+            var model = new ProductModel(productId);
+            var piProductRelation = new ProformaInvoiceModel().GetPIProductRelationByCustomerId(customerId, productId);
+            var unitPrice = piProductRelation != null ? piProductRelation.UnitPrice : model.UnitPriceUsd;
+            //var agentId = piProductRelation != null ? piProductRelation.AgentId : null;
+            return Json(new { Id = model.Id, ProductCode = model.ProductCode, HsCode = model.ProductCode, UnitPrice = unitPrice , StockAmount  = model.StockAmount});
+        }
+
     }
 }
